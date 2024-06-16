@@ -16,7 +16,7 @@ public class DrawerInteractable : XRGrabInteractable
     [SerializeField] bool isGrabbed;
 
     Vector3 limitPositions;
-    [SerializeField] Vector3 limitDistances = new Vector3(.2f, .2f, 0);
+    [SerializeField] Vector3 limitDistances = new Vector3(.02f, .02f, 0);
     [SerializeField] float drawerLimitZ = .8f;
 
     private const string defaultLayer = "Default";
@@ -31,6 +31,7 @@ public class DrawerInteractable : XRGrabInteractable
         }
         parentTransform = transform.parent.transform;
         limitPositions = drawerTransform.localPosition;
+        Debug.Log(limitPositions);
     }
 
     private void OnDrawerLocked(SelectExitEventArgs arg0)
@@ -45,10 +46,12 @@ public class DrawerInteractable : XRGrabInteractable
 
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
+        base.OnSelectEntered(args);
         if (!isLocked)
         {
             transform.SetParent(parentTransform);
             isGrabbed = true;
+          
         }
         else
         {
@@ -56,10 +59,11 @@ public class DrawerInteractable : XRGrabInteractable
         }
     }
 
-    
+   
     protected override void OnSelectExited(SelectExitEventArgs args)
     {
         base.OnSelectExited(args);
+    
         ChangeLayerMask(grabLayer);
         isGrabbed = false;
         transform.localPosition = drawerTransform.localPosition;
@@ -74,7 +78,9 @@ public class DrawerInteractable : XRGrabInteractable
     {
         if (isGrabbed && drawerTransform!=null)
         {
-            drawerTransform.localPosition = new Vector3(drawerTransform.localPosition.x, drawerTransform.localPosition.y, transform.localPosition.z);
+            drawerTransform.localPosition = new Vector3(drawerTransform.localPosition.x, 
+                drawerTransform.localPosition.y, 
+                transform.localPosition.z); // movement logic, drawer follows the z of this gameobject here
 
             CheckLimits();
         }
@@ -86,12 +92,14 @@ public class DrawerInteractable : XRGrabInteractable
             || transform.localPosition.x <= limitPositions.x - limitDistances.x)
         {
             ChangeLayerMask(defaultLayer);
+            Debuger(0);
         }
 
         else if (transform.localPosition.y >= limitPositions.y + limitDistances.y 
             || transform.localPosition.y <= limitPositions.y - limitDistances.y)
         {
             ChangeLayerMask(defaultLayer);
+            Debuger(1);
         }
 
         else if (drawerTransform.localPosition.z <= limitPositions.z - limitDistances.z)
@@ -99,13 +107,24 @@ public class DrawerInteractable : XRGrabInteractable
             isGrabbed = false;
             drawerTransform.localPosition = limitPositions;
             ChangeLayerMask(defaultLayer);
+            Debuger(2);
         }
 
-        else if (drawerTransform.localPosition.z >= limitPositions.z + limitDistances.z)
+        else if (drawerTransform.localPosition.z > drawerLimitZ + limitDistances.z)
         {
             isGrabbed = false;
-            drawerTransform.localPosition = new Vector3(drawerTransform.localPosition.x, drawerTransform.localPosition.y, drawerLimitZ);
+            drawerTransform.localPosition = new Vector3(drawerTransform.localPosition.x, 
+                drawerTransform.localPosition.y, 
+                drawerLimitZ-.02f);  // this .02f was added so that the drawer remains grabbable after auto release, it takes the drawer a lil back from its limit position which is .8
             ChangeLayerMask(defaultLayer);
+            Debuger(3);
         }
     }
+
+
+    public static void Debuger(int v)
+    {
+        Debug.Log(v);
+    }
+
 }
