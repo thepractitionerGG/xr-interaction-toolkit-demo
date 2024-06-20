@@ -14,7 +14,7 @@ public class DrawerInteractable : XRGrabInteractable
 
     [SerializeField] bool isLocked;
     [SerializeField] bool isGrabbed;
-
+    [SerializeField] GameObject keyIndicator;
     Vector3 limitPositions;
     [SerializeField] Vector3 limitDistances = new Vector3(.02f, .02f, 0);
     [SerializeField] float drawerLimitZ = .8f;
@@ -37,6 +37,10 @@ public class DrawerInteractable : XRGrabInteractable
     private void OnDrawerLocked(SelectExitEventArgs arg0)
     {
         isLocked = true;
+        if (keyIndicator != null)
+        {
+            keyIndicator.SetActive(false);
+        }
     }
 
     private void OnDrawerUnlocked(SelectEnterEventArgs arg0)
@@ -80,7 +84,7 @@ public class DrawerInteractable : XRGrabInteractable
         {
             drawerTransform.localPosition = new Vector3(drawerTransform.localPosition.x, 
                 drawerTransform.localPosition.y, 
-                transform.localPosition.z); // movement logic, drawer follows the z of this gameobject here
+                transform.localPosition.z); // movement logic, drawer follows the z of "this" gameobject here
 
             CheckLimits();
         }
