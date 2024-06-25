@@ -31,7 +31,6 @@ public class DrawerInteractable : XRGrabInteractable
         }
         parentTransform = transform.parent.transform;
         limitPositions = drawerTransform.localPosition;
-        Debug.Log(limitPositions);
     }
 
     private void OnDrawerLocked(SelectExitEventArgs arg0)
@@ -131,4 +130,8 @@ public class DrawerInteractable : XRGrabInteractable
         Debug.Log(v);
     }
 
+    public static void Debuger(String s)
+    {
+        Debug.Log(s);
+    }
 }
