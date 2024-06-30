@@ -6,6 +6,9 @@ public class SimpleHingeInteractable : XRSimpleInteractable
 {
     private Transform grabHand;
     [SerializeField] private bool isLocked;
+
+    private const string Default_Layer = "Default";
+    private const string Grab_Layer = "Grab";
     // Start is called before the first frame update
     void Start()
     {
@@ -43,5 +46,15 @@ public class SimpleHingeInteractable : XRSimpleInteractable
     {
         base.OnSelectExited(args);
         grabHand = null;
+        ChangeLayerMask(Grab_Layer);
+    }
+    public void ReleaseHinge()
+    {
+        ChangeLayerMask(Default_Layer);
+    }
+
+    private void ChangeLayerMask(string layer)
+    {
+        interactionLayers = InteractionLayerMask.GetMask(layer);
     }
 }

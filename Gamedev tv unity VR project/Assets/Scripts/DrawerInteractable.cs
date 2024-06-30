@@ -19,8 +19,8 @@ public class DrawerInteractable : XRGrabInteractable
     [SerializeField] Vector3 limitDistances = new Vector3(.02f, .02f, 0);
     [SerializeField] float drawerLimitZ = .8f;
 
-    private const string defaultLayer = "Default";
-    private const string grabLayer = "Grab";
+    private const string Default_Layer = "Default";
+    private const string Grab_Layer = "Grab";
 
     void Start()
     {
@@ -58,7 +58,7 @@ public class DrawerInteractable : XRGrabInteractable
         }
         else
         {
-            ChangeLayerMask(defaultLayer);
+            ChangeLayerMask(Default_Layer);
         }
     }
 
@@ -67,7 +67,7 @@ public class DrawerInteractable : XRGrabInteractable
     {
         base.OnSelectExited(args);
     
-        ChangeLayerMask(grabLayer);
+        ChangeLayerMask(Grab_Layer);
         isGrabbed = false;
         transform.localPosition = drawerTransform.localPosition;
     }
@@ -94,14 +94,14 @@ public class DrawerInteractable : XRGrabInteractable
         if (transform.localPosition.x >= limitPositions.x + limitDistances.x 
             || transform.localPosition.x <= limitPositions.x - limitDistances.x)
         {
-            ChangeLayerMask(defaultLayer);
+            ChangeLayerMask(Default_Layer);
             Debuger(0);
         }
 
         else if (transform.localPosition.y >= limitPositions.y + limitDistances.y 
             || transform.localPosition.y <= limitPositions.y - limitDistances.y)
         {
-            ChangeLayerMask(defaultLayer);
+            ChangeLayerMask(Default_Layer);
             Debuger(1);
         }
 
@@ -109,7 +109,7 @@ public class DrawerInteractable : XRGrabInteractable
         {
             isGrabbed = false;
             drawerTransform.localPosition = limitPositions;
-            ChangeLayerMask(defaultLayer);
+            ChangeLayerMask(Default_Layer);
             Debuger(2);
         }
 
@@ -119,7 +119,7 @@ public class DrawerInteractable : XRGrabInteractable
             drawerTransform.localPosition = new Vector3(drawerTransform.localPosition.x, 
                 drawerTransform.localPosition.y, 
                 drawerLimitZ-.02f);  // this .02f was added so that the drawer remains grabbable after auto release, it takes the drawer a lil back from its limit position which is .8
-            ChangeLayerMask(defaultLayer);
+            ChangeLayerMask(Default_Layer);
             Debuger(3);
         }
     }
