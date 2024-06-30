@@ -5,6 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class SimpleHingeInteractable : XRSimpleInteractable
 {
     private Transform grabHand;
+    [SerializeField] private bool isLocked;
     // Start is called before the first frame update
     void Start()
     {
@@ -12,6 +13,15 @@ public class SimpleHingeInteractable : XRSimpleInteractable
     }
 
     // Update is called once per frame
+
+    public void UnlockHinge()
+    {
+        isLocked = false;
+    }
+    public void LockHinge()
+    {
+        isLocked = true;
+    }
     protected virtual void Update()
     {
         if (grabHand != null)
@@ -22,8 +32,11 @@ public class SimpleHingeInteractable : XRSimpleInteractable
 
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
-        base.OnSelectEntered(args);
-        grabHand = args.interactorObject.transform;
+        if (!isLocked)
+        {
+            base.OnSelectEntered(args);
+            grabHand = args.interactorObject.transform;
+        }
     }
 
     protected override void OnSelectExited(SelectExitEventArgs args)
