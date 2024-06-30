@@ -1,13 +1,18 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class CombinationLock : MonoBehaviour
 {
+    public UnityAction UnlockAction;
+    private void Unlocked() => UnlockAction?.Invoke(); // event created for using this function form anywhere.
+
+    public UnityAction LockAction;
+
+    private void OnLocked() => LockAction?.Invoke();
+
     [SerializeField] XRButtonInteractable[] comboButtons;
     [SerializeField] TMP_Text infoText;
     private const string startString = "Enter 3 digit Combo";
@@ -98,6 +103,7 @@ public class CombinationLock : MonoBehaviour
     private void UnLockCombo()
     {
         isLocked = false;
+        Unlocked();
         lockedPanel.color = unlockedColor;
         lockedText.text = unlockedString;
         if (isResettable)
@@ -117,6 +123,7 @@ public class CombinationLock : MonoBehaviour
     private void LockCombo()
     {
         isLocked = true;
+        OnLocked();
         lockedPanel.color = lockedColor;
         lockedText.text = lockedString;
         infoText.text = startString;

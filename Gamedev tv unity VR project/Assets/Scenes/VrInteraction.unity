@@ -7150,7 +7150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18072,6 +18072,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
+  isLocked: 0
 --- !u!23 &992848170
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18132,13 +18133,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992848166}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: 3.37, y: 1.302, z: 12.81}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 291708778}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 543450653675557124}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1010753665
 PrefabInstance:
@@ -20646,7 +20647,7 @@ GameObject:
   - component: {fileID: 1143911644}
   - component: {fileID: 1143911643}
   m_Layer: 0
-  m_Name: Spot Light
+  m_Name: Drawer light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26812,7 +26813,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562013203}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 390}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26824,7 +26825,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1220.8, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1562013205
@@ -38411,6 +38412,7 @@ Transform:
   - {fileID: 1928383261546450538}
   - {fileID: 4474771324649884585}
   - {fileID: 4152576697923797248}
+  - {fileID: 992848172}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &558221450555033037
@@ -43596,6 +43598,8 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
+  isLocked: 1
+  comboLock: {fileID: 1562013207}
   doorObject: {fileID: 4293244893532589091}
 --- !u!54 &7232470888017917428
 Rigidbody:
@@ -44956,6 +44960,8 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
+  isLocked: 1
+  comboLock: {fileID: 1562013207}
   doorObject: {fileID: 6097707996733700590}
 --- !u!54 &8471264457679275834
 Rigidbody:
@@ -45952,4 +45958,3 @@ SceneRoots:
   - {fileID: 210319082}
   - {fileID: 363577442}
   - {fileID: 1076410302}
-  - {fileID: 992848172}
