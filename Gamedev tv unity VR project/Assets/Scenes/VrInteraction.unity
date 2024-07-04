@@ -43601,6 +43601,7 @@ MonoBehaviour:
   isLocked: 1
   comboLock: {fileID: 1562013207}
   doorObject: {fileID: 4293244893532589091}
+  rotationLimits: {x: 0, y: 0, z: 0}
 --- !u!54 &7232470888017917428
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -44963,6 +44964,7 @@ MonoBehaviour:
   isLocked: 1
   comboLock: {fileID: 1562013207}
   doorObject: {fileID: 6097707996733700590}
+  rotationLimits: {x: 0, y: 0, z: 0}
 --- !u!54 &8471264457679275834
 Rigidbody:
   m_ObjectHideFlags: 0
