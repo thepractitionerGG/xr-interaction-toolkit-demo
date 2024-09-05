@@ -7235,7 +7235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14244,6 +14244,7 @@ MonoBehaviour:
   rotationLimits: {x: 0, y: 0, z: 0}
   closedCollider: {fileID: 0}
   openCollider: {fileID: 0}
+  endRotation: {x: 0, y: 0, z: 0}
 --- !u!23 &775830634
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14633,7 +14634,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &808596913
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14941,8 +14942,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6366b332250ed8a49add1193a0b584af, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 824064277}
   m_SourcePrefab: {fileID: 100100000, guid: 6366b332250ed8a49add1193a0b584af, type: 3}
+--- !u!1 &824064276 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6366b332250ed8a49add1193a0b584af, type: 3}
+  m_PrefabInstance: {fileID: 824064275}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &824064277
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824064276}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4535594853785956779, guid: 6366b332250ed8a49add1193a0b584af, type: 3}
 --- !u!1 &829198481
 GameObject:
   m_ObjectHideFlags: 0
@@ -29299,7 +29330,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1658248903
 Transform:
   m_ObjectHideFlags: 0
@@ -39170,7 +39201,7 @@ Transform:
   m_GameObject: {fileID: 2422516021529070404}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 4.08, y: 0.938, z: 14.889999}
+  m_LocalPosition: {x: 4.08, y: 0.644, z: 14.889999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -43873,13 +43904,14 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  positionLimits: {x: 0.15, y: 0.03, z: 0.15}
+  positionLimits: {x: 0.15, y: 0.1, z: 0.15}
   isLocked: 1
   comboLock: {fileID: 1562013207}
   doorObject: {fileID: 4293244893532589091}
   rotationLimits: {x: 15, y: 0, z: 0}
   closedCollider: {fileID: 5380138440031041178}
   openCollider: {fileID: 8878458082114583955}
+  endRotation: {x: 0, y: 0, z: 0}
 --- !u!54 &7232470888017917428
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -44636,7 +44668,7 @@ MonoBehaviour:
   isLocked: 1
   isGrabbed: 0
   keyIndicator: {fileID: 1731413778}
-  limitDistances: {x: 0.06, y: 0.03, z: 0.02}
+  limitDistances: {x: 0.1, y: 0.1, z: 0.1}
   drawerLimitZ: 0.8
 --- !u!1 &7584415455641904939
 GameObject:
@@ -45281,13 +45313,14 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  positionLimits: {x: 0.15, y: 0.03, z: 0.15}
+  positionLimits: {x: 0.15, y: 0.1, z: 0.15}
   isLocked: 1
   comboLock: {fileID: 1562013207}
   doorObject: {fileID: 6097707996733700590}
   rotationLimits: {x: 0, y: 0, z: 0}
   closedCollider: {fileID: 4991924211129538989}
   openCollider: {fileID: 4991924211129538989}
+  endRotation: {x: 0, y: 0, z: 0}
 --- !u!54 &8471264457679275834
 Rigidbody:
   m_ObjectHideFlags: 0
