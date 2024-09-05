@@ -1,9 +1,18 @@
 # ninja log v5
 14	1037	7409105998843478	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	1c6cdd6f8160a59c
+0	1181	7409106000295070	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	f525100fd60151ee
 25	1078	7409105999259194	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	6c1eb0b1edaa28ec
 9	1104	7409105999511643	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	32390cbfe33e56d
+1365	1541	7409106003355373	D:/unity VR and other projects/Gamedev tv unity Vr Project github/xr-interaction-toolkit-demo/Gamedev tv unity VR project/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4e714f61/obj/arm64-v8a/libgame.so	8e01e58f5d59b94f
 30	1145	7409105999872137	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	87a6618f9e35f013
-0	1181	7409106000295070	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	f525100fd60151ee
 20	1318	7409106001679870	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	aee96d90fd5d39d5
 5	1365	7409106002132240	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	57918203c5fe7101
-1365	1541	7409106003355373	D:/unity VR and other projects/Gamedev tv unity Vr Project github/xr-interaction-toolkit-demo/Gamedev tv unity VR project/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4e714f61/obj/arm64-v8a/libgame.so	8e01e58f5d59b94f
+8	475	7472110676337651	build.ninja	94ec3e4ac1fa7140
+31	2035	7472110697387322	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	1c6cdd6f8160a59c
+27	2048	7472110697529474	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	6c1eb0b1edaa28ec
+17	2053	7472110697574692	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	32390cbfe33e56d
+20	2098	7472110698033317	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	87a6618f9e35f013
+0	2121	7472110698281306	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	f525100fd60151ee
+24	2249	7472110699570392	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	aee96d90fd5d39d5
+11	2303	7472110700085556	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	57918203c5fe7101
+2304	2670	7472110703330022	D:/unity VR and other projects/Gamedev tv unity Vr Project github/xr-interaction-toolkit-demo/Gamedev tv unity VR project/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4e714f61/obj/arm64-v8a/libgame.so	8e01e58f5d59b94f

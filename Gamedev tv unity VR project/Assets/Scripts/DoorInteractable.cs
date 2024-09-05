@@ -8,13 +8,22 @@ public class DoorInteractable : SimpleHingeInteractable
     [SerializeField] CombinationLock comboLock;
     [SerializeField] Transform doorObject;
     [SerializeField] Vector3 rotationLimits;
-    private Transform startRotation;
+    [SerializeField] Collider closedCollider;
+    private bool isClosed;
+    private Vector3 startRotation;
+
+
+    [SerializeField] Collider openCollider;
+    private bool isOpen;
+    [SerializeField] private Vector3 endRotation;
+
+
     private float startAngleX;
     protected override void Start()
     {
         base.Start();
-        startRotation = transform;
-        startAngleX = startRotation.localEulerAngles.x;
+        startRotation = transform.localEulerAngles;
+        startAngleX = startRotation.x;
         if (startAngleX >= 180)
         {
             startAngleX -= 360;
@@ -56,6 +65,8 @@ public class DoorInteractable : SimpleHingeInteractable
 
     private void CheckLimits()
     {
+        isClosed = false;
+        isOpen = false;
         float localAngelX = transform.localEulerAngles.x;
 
         if (localAngelX >= 180)
@@ -67,7 +78,39 @@ public class DoorInteractable : SimpleHingeInteractable
         if (localAngelX >= startAngleX + rotationLimits.x||localAngelX<=startAngleX-rotationLimits.x) // here we are checking the limits for angle X. we are checing if it goes above 15 or below -15
         {
             ReleaseHinge();
+           
+        }
+    }
+
+    public override void ResetHinge() // in the video its protected instead of public dont know whats happning
+    {
+        if (isClosed)
+        {
+            transform.localEulerAngles = startRotation;
+        }
+        else if (isOpen)
+        {
+            transform.localEulerAngles = endRotation;
+        }
+        else
+        {
             transform.localEulerAngles = new Vector3(startAngleX, transform.localEulerAngles.y, transform.localEulerAngles.z);
+        }
+       
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other == closedCollider)
+        {
+            isClosed = true;
+            ReleaseHinge();
+        }
+
+        if (other == openCollider)
+        {
+            isOpen = true;
+            ReleaseHinge();
         }
     }
 }

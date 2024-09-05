@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 [RequireComponent(typeof(Collider))]
 [RequireComponent(typeof(Rigidbody))]
-public class SimpleHingeInteractable : XRSimpleInteractable
+public abstract class SimpleHingeInteractable : XRSimpleInteractable
 {
     [SerializeField] Vector3 positionLimits;
     private Transform grabHand;
@@ -53,6 +53,9 @@ public class SimpleHingeInteractable : XRSimpleInteractable
         base.OnSelectExited(args);
         grabHand = null;
         ChangeLayerMask(Grab_Layer);
+        ResetHinge(); // this is an abstract function ok, we are doing this in this script as this script is inherited by other script which has a hinge functionaliy and they all need reseting at some point 
+                      // so this is a genral call is made on release of a spefic hinge which is grabbed 
+                      // so we dont need to call this function again and again in each hinge script
     }
 
     private void TrackHand()
@@ -75,6 +78,9 @@ public class SimpleHingeInteractable : XRSimpleInteractable
             ReleaseHinge();
        }
     }
+
+
+    public abstract void ResetHinge();
     public void ReleaseHinge()
     {
         ChangeLayerMask(Default_Layer);
