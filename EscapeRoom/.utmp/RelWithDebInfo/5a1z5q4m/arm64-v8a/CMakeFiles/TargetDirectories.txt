@@ -1,0 +1,5 @@
+D:/unity VR and other projects/Escape Room/Escape Room/EscapeRoom/.utmp/RelWithDebInfo/5a1z5q4m/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/unity VR and other projects/Escape Room/Escape Room/EscapeRoom/.utmp/RelWithDebInfo/5a1z5q4m/arm64-v8a/CMakeFiles/rebuild_cache.dir
+D:/unity VR and other projects/Escape Room/Escape Room/EscapeRoom/.utmp/RelWithDebInfo/5a1z5q4m/arm64-v8a/GameActivity/CMakeFiles/game.dir
+D:/unity VR and other projects/Escape Room/Escape Room/EscapeRoom/.utmp/RelWithDebInfo/5a1z5q4m/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+D:/unity VR and other projects/Escape Room/Escape Room/EscapeRoom/.utmp/RelWithDebInfo/5a1z5q4m/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
