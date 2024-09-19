@@ -21,6 +21,7 @@ public class DrawerInteractable : XRGrabInteractable
 
     private const string Default_Layer = "Default";
     private const string Grab_Layer = "Grab";
+    private Vector3 previousPosition;
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class DrawerInteractable : XRGrabInteractable
         }
         parentTransform = transform.parent.transform;
         limitPositions = drawerTransform.localPosition;
+        previousPosition = drawerTransform.localPosition;
     }
 
     private void OnDrawerLocked(SelectExitEventArgs arg0)
@@ -54,7 +56,6 @@ public class DrawerInteractable : XRGrabInteractable
         {
             transform.SetParent(parentTransform);
             isGrabbed = true;
-          
         }
         else
         {

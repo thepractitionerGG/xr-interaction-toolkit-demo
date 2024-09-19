@@ -38,7 +38,11 @@ public class HudEnabler : MonoBehaviour
         else
         {
             HudMennu.SetActive(true);
-            HudMennu.transform.position = HudLocation.position;
+          
+            HudMennu.transform.position = Camera.main.transform.position + Camera.main.transform.forward * .7f; 
+
+           
+            HudMennu.transform.rotation = Quaternion.LookRotation(Camera.main.transform.forward, Vector3.up);
         }
     }
 }

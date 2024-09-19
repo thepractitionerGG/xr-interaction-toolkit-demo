@@ -54,6 +54,8 @@ public class DoorInteractable : SimpleHingeInteractable
                 doorObject.transform.localEulerAngles.x, 
                 transform.localEulerAngles.y, 
                 doorObject.transform.localEulerAngles.z);
+
+          
         }
 
         if (isSelected)

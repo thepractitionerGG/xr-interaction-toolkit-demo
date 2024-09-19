@@ -102,6 +102,7 @@ public class CombinationLock : MonoBehaviour
 
     private void UnLockCombo()
     {
+        AudioManagerr.instance.PlaySFX(0);
         isLocked = false;
         Unlocked();
         lockedPanel.color = unlockedColor;
